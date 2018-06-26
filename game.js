@@ -10,6 +10,7 @@ var thrustPower = .00002;
 var thrust = false;
 var maxFuel=100;
 var fuelmaxFuel;
+var blowUp;
 
 function initGame() {
     lander = new Lander('ship');
@@ -39,6 +40,14 @@ function hideFlame()
 {
 var flame = document.getElementById('flame');
     flame.style.display = 'none';
+
+}
+function initBlowUp()
+{
+    blowUp= new BlowUp('blowup');
+    blowUp.scaleTo(2.0);
+    var blowUp = document.getElementById('blowup');
+   blowUp.style.display = 'block';
 
 }
 function displayFuel(fuel)
@@ -72,7 +81,10 @@ function loop() {
         }
         else{
             document.getElementById('fuel').innerHTML = 'UFO Crashed';
-
+           // var ship=document.getElementById('ship');
+            //ship.style.display='none';
+            initBlowUp();
+           
         }
     
 

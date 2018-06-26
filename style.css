@@ -31,6 +31,7 @@ body{
     width:500px;
     height:375px;
     background: url('images/ship.png') ;
+    display: block;
     top: -1000px;
 }
 #flame {
@@ -43,6 +44,18 @@ body{
     background: url('images/flame.png') ;
     top: -1000px;
     background-repeat: no-repeat;
+}
+#blowup {
+    position: absolute relative  ;
+    width:550px;
+    height:500px;
+    display: none;
+   
+    margin-left: 45px;
+    background: url('GIF/crashed.gif') ; 
+    top: 0px;
+    background-repeat: no-repeat;
+
 }
 #fuel
 {
