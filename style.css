@@ -50,10 +50,10 @@ body{
     width:550px;
     height:500px;
     display: none;
-   
+    margin-bottom: 500px;
     margin-left: 45px;
     background: url('GIF/crashed.gif') ; 
-    top: 0px;
+    top: -1000px;
     background-repeat: no-repeat;
 
 }

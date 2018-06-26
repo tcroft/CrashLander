@@ -94,7 +94,8 @@ function reset() {
     shipPosition = 1;
     shipSpeed = 0;
     fuel=maxFuel;    
-    
+    var blowUp = document.getElementById('blowup');
+    blowUp.style.display = 'none';
     layout();
 
 }
