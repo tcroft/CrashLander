@@ -8,7 +8,8 @@ var shipSpeed;
 var gravity = .00001;
 var thrustPower = .00002;
 var thrust = false;
-
+var fuel=100;
+var maxfuel;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
@@ -19,13 +20,27 @@ function initGame() {
 
     reset();
 }
+function displayFuel(fuel){
+
+    document.getElementById('fuel').innerHTML ='Fuel is : '+fuel;
+    }	
 
 function loop() {
   
     if (thrust) {
-        shipSpeed -= thrustPower;
-    }
+        if(fuel>0){
+            fuel-=1;
+            displayFuel(fuel);
 
+                    
+        }
+        if(fuel==0){
+            crash();
+        }
+        shipSpeed -= thrustPower;
+        
+    }
+    
     if (shipPosition > 0 || thrust) {
         shipSpeed += gravity;
         shipPosition -= shipSpeed;
@@ -40,32 +55,30 @@ function loop() {
 function reset() {
     shipPosition = 1;
     shipSpeed = 0;
-
     layout();
 }
 
 function startThrust() {
     thrust = true;
-
-}
+  }
 
 function stopThrust() {
-    thrust = false;
+     thrust = false;
+
 }
 function layout() {
     var height = canvas.clientHeight - lander.height();
     var distance = height - (height * shipPosition);
-    console.log(height);
-    write(distance);
+
     lander.moveTo(canvas.clientWidth/2, lander.height()/2 + distance);
-}
+ }
 function fuelIndicator(){
 
     return distance;
 }
-function write(fuel){
-    document.getElementById('fuel').innerHTML+=fuel;
-    }	
+function crash(){
+    shipPosition=0;
+   }
 
 
 
