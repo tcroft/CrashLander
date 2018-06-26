@@ -8,10 +8,17 @@ body{
     background: #cfcfcf;
     top: 20px;
     left: 20px;
-    padding: 15px    
+    padding: 15px ;
+    width: 119;
+    height: 70;  
+    opacity: 0.6;
+    
 }
 #canvas {
-    background: #000000;
+    background-image:url('images/background.png')  ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1680px 1080px;
     width: 100%;
     height: 100%;
 }
@@ -19,7 +26,12 @@ body{
     position:absolute;
     width:500px;
     height:375px;
-    background: url('images/ship.png');
+    background: url('images/ship.png') ;
     top: -1000px;
+}
+#fuel
+{
+font-family: 'Courier New', Courier, monospace;
+color: red
 }
 
