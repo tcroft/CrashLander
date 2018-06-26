@@ -11,7 +11,10 @@ body{
     padding: 15px    
 }
 #canvas {
-    background: #000000;
+    background-image:url('images/background.png')  ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1680px 1080px;
     width: 100%;
     height: 100%;
 }
@@ -19,7 +22,7 @@ body{
     position:absolute;
     width:500px;
     height:375px;
-    background: url('images/ship.png');
+    background: url('images/ship.png') ;
     top: -1000px;
 }
 
