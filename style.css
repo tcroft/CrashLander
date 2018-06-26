@@ -1,7 +1,7 @@
 
 body{
     margin: 0px;
-}
+  }
 
 #controls {
     position: absolute;
@@ -11,12 +11,11 @@ body{
     padding: 15px    
 }
 #canvas {
-    background-image:url('images/background.png')  ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1680px 1080px;
+
+    background-image: url("images/background.jpg");
     width: 100%;
     height: 100%;
+    
 }
 #ship {
     position:absolute;

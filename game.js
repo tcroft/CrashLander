@@ -50,7 +50,6 @@ function startThrust() {
 function stopThrust() {
     thrust = false;
 }
-
 function layout() {
     var height = canvas.clientHeight - lander.height();
     var distance = height - (height * shipPosition);
