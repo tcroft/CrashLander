@@ -30,7 +30,7 @@ function loop() {
     if (thrust) {
         if(fuel>0)
        {
-        fuel=fuel-0.1;
+        fuel=fuel-0.5;
         shipSpeed -= thrustPower;
        }
  
