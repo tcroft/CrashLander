@@ -1,7 +1,7 @@
 
 var lander;
 var canvas;
-
+var flame;
 var state;
 var shipPosition;
 var shipSpeed;
@@ -14,6 +14,8 @@ var fuelmaxFuel;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
+    flame = new Lander('flame');
+    flame.scaleTo(.5);
 
     canvas = document.getElementById('canvas');
 
@@ -42,7 +44,16 @@ function loop() {
         shipSpeed = 0;
         shipPosition = 0;
     }
-    layout();
+    if(shipSpeed >0 &&
+        shipPosition > 0)
+        {
+            layout();
+        }
+        else{
+            document.getElementById('fuel').innerHTML = 'Crashed:';
+
+        }
+    
 }
 
 function reset() {

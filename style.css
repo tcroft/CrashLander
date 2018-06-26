@@ -22,12 +22,25 @@ body{
     width: 100%;
     height: 100%;
 }
+#lost
+{
+    font-family: 'Courier New', Courier, monospace;
+    color: red
+
+}
 #ship {
     position:absolute;
     width:500px;
     height:375px;
     background: url('images/ship.png') ;
     top: -1000px;
+}
+#flame {
+    position: unset;
+    width:500px;
+    height:375px;
+    background: url('images/flame.png') ;
+    top: -500px;
 }
 #fuel
 {
