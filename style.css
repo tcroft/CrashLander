@@ -1,0 +1,25 @@
+
+body{
+    margin: 0px;
+}
+
+#controls {
+    position: absolute;
+    background: #cfcfcf;
+    top: 20px;
+    left: 20px;
+    padding: 15px    
+}
+#canvas {
+    background: #000000;
+    width: 100%;
+    height: 100%;
+}
+#ship {
+    position:absolute;
+    width:500px;
+    height:375px;
+    background: url('images/ship.png');
+    top: -1000px;
+}
+
