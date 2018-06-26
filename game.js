@@ -6,6 +6,8 @@ var state;
 var shipPosition;
 var shipSpeed;
 var gravity = .00001;
+var thrustPower = .00002;
+var thrust = false;
 
 function initGame() {
     lander = new Lander('ship');
@@ -20,9 +22,15 @@ function initGame() {
 
 function loop() {
 
-    shipSpeed += gravity;
-    shipPosition -= shipSpeed;
-    if (shipPosition < 0) {
+    if (thrust) {
+        shipSpeed -= thrustPower;
+    }
+
+    if (shipPosition > 0 || thrust) {
+        shipSpeed += gravity;
+        shipPosition -= shipSpeed;
+    } else {
+        shipSpeed = 0;
         shipPosition = 0;
     }
     layout();
@@ -33,6 +41,14 @@ function reset() {
     shipSpeed = 0;
 
     layout();
+}
+
+function startThrust() {
+    thrust = true;
+}
+
+function stopThrust() {
+    thrust = false;
 }
 
 function layout() {

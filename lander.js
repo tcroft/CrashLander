@@ -4,7 +4,7 @@ function Lander(id) {
     if (div == null) {
         console.log("Could not find lander '" + id + "'");
     }
-    var scale = 1;
+    var scale = 100;
 
     this.moveTo = function(x, y) {
         div.style.top = y - div.clientHeight/2;
