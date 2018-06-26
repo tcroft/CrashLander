@@ -24,7 +24,9 @@ function displayFuel(fuel){
 
     document.getElementById('fuel').innerHTML ='Fuel is : '+fuel;
     }	
-
+function display(){
+    document.getElementById('crash').innerHTML ='Oops your plane has crashed... ';
+}
 function loop() {
   
     if (thrust) {
@@ -35,7 +37,8 @@ function loop() {
                     
         }
         if(fuel==0){
-            crash();
+        stopThrust();   
+    
         }
         shipSpeed -= thrustPower;
         
@@ -76,9 +79,6 @@ function fuelIndicator(){
 
     return distance;
 }
-function crash(){
-    shipPosition=0;
-   }
 
 
 
