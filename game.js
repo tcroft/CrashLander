@@ -14,14 +14,24 @@ var fuelmaxFuel;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
-    flame = new Lander('flame');
-    flame.scaleTo(.5);
+    //flame = new Flame('flame');
+    //flame.scaleTo(.2);
 
     canvas = document.getElementById('canvas');
 
     window.setInterval(loop, 10);
 
     reset();
+}
+
+function initFlame()
+{
+    
+    flame = new Flame('flame');
+    flame.scaleTo(.2);
+    var flame = document.getElementById('flame');
+    flame.style.display = 'block';
+
 }
 function displayFuel(fuel)
 {
@@ -30,8 +40,10 @@ function displayFuel(fuel)
 function loop() {
 
     if (thrust) {
+       
         if(fuel>0)
        {
+           
         fuel=fuel-0.5;
         shipSpeed -= thrustPower;
        }
@@ -50,7 +62,7 @@ function loop() {
             layout();
         }
         else{
-            document.getElementById('fuel').innerHTML = 'Crashed:';
+            document.getElementById('fuel').innerHTML = 'UFO Crashed';
 
         }
     
@@ -60,15 +72,20 @@ function reset() {
     shipPosition = 1;
     shipSpeed = 0;
     fuel=maxFuel;    
+    
     layout();
+
 }
 
 function startThrust() {
     thrust = true;  
+    initFlame();
 }
 
 function stopThrust() {
     thrust = false;
+    var flame = document.getElementById('flame');
+    flame.style.display = 'none';
 }
 
 function layout() {

@@ -36,11 +36,15 @@ body{
     top: -1000px;
 }
 #flame {
-    position: unset;
-    width:500px;
-    height:375px;
+    position: absolute relative  ; 
+    width:400px;
+    height:500px;
+    display: none;
+    margin-top: 43px;
+    margin-left: 45px;
     background: url('images/flame.png') ;
-    top: -500px;
+    top: -1000px;
+    background-repeat: no-repeat;
 }
 #fuel
 {
