@@ -1,5 +1,7 @@
 
+
 body{
+   
     margin: 0px;
 }
 
@@ -11,7 +13,7 @@ body{
     padding: 15px    
 }
 #canvas {
-    background: #000000;
+    background-image: url("background.jpg");
     width: 100%;
     height: 100%;
 }
