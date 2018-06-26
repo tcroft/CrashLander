@@ -11,11 +11,10 @@ body{
     padding: 15px    
 }
 #canvas {
+    background-image: url("images/bgnew.png");
+   width: 100%;
+   height: 100%; 
 
-    background-image: url("images/background.jpg");
-    width: 100%;
-    height: 100%;
-    
 }
 #ship {
     position:absolute;

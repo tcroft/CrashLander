@@ -21,7 +21,7 @@ function initGame() {
 }
 
 function loop() {
-
+  
     if (thrust) {
         shipSpeed -= thrustPower;
     }
@@ -33,6 +33,7 @@ function loop() {
         shipSpeed = 0;
         shipPosition = 0;
     }
+   
     layout();
 }
 
@@ -45,6 +46,7 @@ function reset() {
 
 function startThrust() {
     thrust = true;
+
 }
 
 function stopThrust() {
@@ -53,6 +55,17 @@ function stopThrust() {
 function layout() {
     var height = canvas.clientHeight - lander.height();
     var distance = height - (height * shipPosition);
-
+    console.log(height);
+    write(distance);
     lander.moveTo(canvas.clientWidth/2, lander.height()/2 + distance);
 }
+function fuelIndicator(){
+
+    return distance;
+}
+function write(fuel){
+    document.getElementById('fuel').innerHTML+=fuel;
+    }	
+
+
+
