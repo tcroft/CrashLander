@@ -8,7 +8,11 @@ body{
     background: #cfcfcf;
     top: 20px;
     left: 20px;
-    padding: 15px    
+    padding: 15px ;
+    width: 90;
+    height: 70;  
+    opacity: 0.6;
+    
 }
 #canvas {
     background-image:url('images/background.png')  ;
@@ -24,5 +28,10 @@ body{
     height:375px;
     background: url('images/ship.png') ;
     top: -1000px;
+}
+#fuel
+{
+font-family: 'Courier New', Courier, monospace;
+color: red
 }
 
