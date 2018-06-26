@@ -11,10 +11,7 @@ body{
     padding: 15px    
 }
 #canvas {
-    background-image:url('images/background.png')  ;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1680px 1080px;
+    background:url('images/Wallpapers-Macbook-Pro-13-Gallery-85-Plus-PIC-WPW2012503.jpg');
     width: 100%;
     height: 100%;
 }
@@ -22,7 +19,7 @@ body{
     position:absolute;
     width:500px;
     height:375px;
-    background: url('images/ship.png') ;
+    background: url('images/ship.png');
     top: -1000px;
 }
 
