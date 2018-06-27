@@ -24,23 +24,20 @@ function displayFuel(fuel){
 
     document.getElementById('fuel').innerHTML ='Fuel is : '+fuel;
     }	
-function display(){
+function displayEmptyFuel(){
     document.getElementById('crash').innerHTML ='your fuel is empty youre going to crash.. ';
-}
-function success(){
-
 }
 function loop() {
   
     if (thrust) {
         if(fuel>0){
-            fuel-=0.1;
+            fuel-=0.5;
             displayFuel(fuel);
 
                     
         }
         if(fuel==0){
-            display();
+            displayEmptyFuel();
             stopThrust();   
         }
         
@@ -56,10 +53,6 @@ function loop() {
         shipPosition = 0;
     
     }
-    /*if(shipPosition==0){
-        console.log("crash");
-    }
-   */
     layout();
 }
 
