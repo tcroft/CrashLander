@@ -1,5 +1,6 @@
 <html>
     <head>
+        <title>Crash </title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="lander.js"></script>
         <script src="game.js"></script>
@@ -15,11 +16,13 @@
             <div><button onclick="reset()">Reset</button></div>
             <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
 
-            <div id="fuel"></div>
+            <font style="color: darkgreen">Fuel gauge</font>
+            <meter id="fuelGauge" value="100" low="0" max="100" ></meter>
+            <div id="fuel" ></div>
         </div>
         <div id="ship"><div id="flame"></div>
         <div id="blowup"><button onclick="reset()">UFO crashed!!! Click to Play Again</button></div>
-        <div id="win"><button onclick="reset()">#You Win</button></div>
+        <div id="win" ><button id="winbutton"onclick="reset()">You Win</button></div>
         
         </div>
        
