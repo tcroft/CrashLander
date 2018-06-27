@@ -5,15 +5,28 @@ body{
 
 #controls {
     position: absolute;
-    background: #cfcfcf;
+    background: #555555;
     top: 20px;
     left: 20px;
-    padding: 15px    
+    padding: 15px;
+    border-radius: 10px;
 }
 #canvas {
-    background: #000000;
+    background: url('images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
     width: 100%;
     height: 100%;
+}
+
+#planet{
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 75px;
+    background: url('images/ground.jpg');
+    background-size: contain;
 }
 #ship {
     position:absolute;
@@ -23,3 +36,53 @@ body{
     top: -1000px;
 }
 
+#gameOver {
+    position: absolute;
+    color: white;
+    left: 45%;
+    top: 50px;
+    font-size: 28pt;
+}
+
+#thrustButton {
+    width: 100px;
+    height: 100px;
+    background: url('images/button.png');
+    background-size: contain;
+}
+
+#explosion {
+    position: relative;
+    top: -150px;
+    left: 40px;
+    background: url('images/explosion.png') no-repeat;
+    background-size: contain;
+    width: 450px;
+    height: 500px;
+}
+
+.flame {
+    background: url('images/flame.png');
+    position:relative;
+    width:200px;
+    height:200px;
+    bottom: -230px;
+    left: 150px;
+    background-size: contain;
+}
+.flame2 {
+    background: url('images/flame2.png');
+    position:relative;
+    width:200px;
+    height:200px;
+    bottom: -230px;
+    left: 150px;
+    background-size: contain;
+}
+
+#playAgain {
+    background: url('images/playagain.png') no-repeat;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+}

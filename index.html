@@ -1,5 +1,6 @@
 <html>
     <head>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="lander.js"></script>
         <script src="game.js"></script>
@@ -7,10 +8,17 @@
     <body onload="initGame()">
         <div id="canvas"></div>
         <div id="controls">
-            <div>Controls</div>
-            <div><button onclick="reset()">Reset</button></div>
-            <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
+            <div><img src="images/gas.png" width="20px" height="auto">&nbsp;<meter id="fuelGauge" min="0" max="1" style="vertical-align: baseline"></meter></div>
+            <div style="height:20px"></div>
+            <div id="thrustButton" onmousedown="startThrust()" onmouseup="stopThrust()"></div>
         </div>
-        <div id="ship"></div>
+        <div id="planet"></div>
+        <div id="ship">
+            <div id="explosion"></div>
+            <div id="flame"></div>
+        </div>
+        <div id="gameOver">
+            <div style="margin-top:20px"><div id="playAgain" onclick="reset()"></button></div>
+        </div>
     </body>
 </html>
