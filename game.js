@@ -18,9 +18,7 @@ function initGame() {
     lander.scaleTo(.5);
     canvas = document.getElementById('canvas');
     meter=document.getElementById("fuel");
-    //speed=document.getElementById("shipSpeed");
     window.setInterval(loop, 10);
-    // document.getElementById("crashed").innerHTML="";
     reset();
 }
 
@@ -60,7 +58,7 @@ function reset() {
     shipPosition = 1;
     shipSpeed = 0;
     meter.value=100;
-    // ship.style.background="url('images/ship.png')";
+    ship.style.background="url('images/ship.png')";
     layout();
 }
 
@@ -86,10 +84,10 @@ function display(fuel){
 
 function displaysuccessmessage(){
     document.getElementById("landed").innerHTML="!!! Landed Successfully !!!";
-    ship.style.background="url('images/successlanded.gif')";
+    ship.style.background="url('images/successlanded.gif') no-repeat";
 }
 
 function displaycrashedmessage(){
     document.getElementById("crashed").innerHTML="!!! Game Over !!!";
-    ship.style.background="url('images/explosion.jpg')";
+    ship.style.background="url('images/explosion.jpg') no-repeat";
 }
