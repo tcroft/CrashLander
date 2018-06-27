@@ -3,6 +3,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="lander.js"></script>
         <script src="game.js"></script>
+        <script src="crash.js"></script>
     </head>
     <body onload="initGame()">
         <div id="canvas"></div>
@@ -10,7 +11,19 @@
             <div>Controls</div>
             <div><button onclick="reset()">Reset</button></div>
             <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
+            <div>Fuel Status 
+            <meter id="fuel" min="0" max="100">fuel</meter><br> </div>
+            
+            <!-- <div id="fuel">100</div>
+            <div>Speed Meter &nbsp;
+                <meter1 id="shipSpeed" min="0" max="0.005">shipSpeed</meter1><br> </div>  -->
         </div>
+        <div id="crash"><button onclick="reset()">Your UFO is crashed</button></div>
+        <div id="crashed">
+        </div>
+        <div id="landed">
+        </div>
+
         <div id="ship"></div>
     </body>
 </html>
