@@ -6,7 +6,7 @@ var state;
 var shipPosition;
 var shipSpeed;
 var gravity = .000005;
-var thrustPower = .00005;
+var thrustPower = .00003;
 var thrust = false;
 var fuel=100;
 var maxfuel;
@@ -38,12 +38,12 @@ function loop() {
         if(fuel>0){
             fuel-=0.5;
             displayFuel(fuel);
-   
-        }else if(fuel==0){
+            shipSpeed -= thrustPower;
+            
+        }/* else if(fuel==0){
             displayEmptyFuel();
             stopThrust();   
-        }
-        shipSpeed -= thrustPower;
+        } */
            
     }
     
@@ -52,12 +52,11 @@ function loop() {
         shipPosition -= shipSpeed;
         
       
-    } 
-    else {
+    }else {
         if(!done){
 
             if(shipSpeed<=0.0012){
-                document.getElementById('landingsuccess').innerHTML ='landed successfully..';
+                document.getElementById('crash').innerHTML ='landed successfully..';
                fuel=0;
         
             
