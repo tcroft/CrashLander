@@ -1,7 +1,7 @@
 
 var lander;
 var canvas;
-var landerPlatform;
+var landingPlatform;
 var state;
 var shipPosition;
 var shipSpeed;
