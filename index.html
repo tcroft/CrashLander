@@ -7,10 +7,14 @@
     <body onload="initGame()">
         <div id="canvas"></div>
         <div id="controls">
-            <div>Controls</div>
-            <div><button onclick="reset()">Reset</button></div>
-            <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
+            <div>Controls </div>
+            <div id="button">
+            <div><button onclick="reset()" class="button">Reset</button></div></br>
+            <div><button onmousedown="startThrust()" onmouseup="stopThrust()" class="button">Thrust</button></div></br>
+            <div id="fuel">Fuel :</div>
+            <div id="msg">msg:  Fuel:</div>
         </div>
+    </div>
         <div id="ship"></div>
     </body>
 </html>
