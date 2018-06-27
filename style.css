@@ -14,12 +14,17 @@ body{
     opacity: 0.6;
     
 }
-#canvas {
-    background-image: url("images/bgnew.png");
-   width: 100%;
-   height: 100%; 
 
-}
+    #canvas {
+        background-image:url('images/background.png')  ;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 1680px 1080px;
+        width: 100%;
+        height: 100%;
+    }
+
+
 #lost
 {
     font-family: 'Courier New', Courier, monospace;
@@ -50,8 +55,7 @@ body{
     width:550px;
     height:500px;
     display: none;
-   
-    margin-left: 45px;
+     margin-left: 45px;
     background: url('GIF/crashed.gif') ; 
     top: 0px;
     background-repeat: no-repeat;
@@ -62,4 +66,8 @@ body{
 font-family: 'Courier New', Courier, monospace;
 color: red
 }
-
+#win{
+    width:550px;
+    height:500px;
+    position: absolute relative  ;
+}

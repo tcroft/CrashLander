@@ -11,16 +11,17 @@ var thrust = false;
 var maxFuel=100;
 var fuelmaxFuel;
 var blowUp;
-
+var win;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
     
-    
-    canvas = document.getElementById('canvas');
 
+    canvas = document.getElementById('canvas');
+    win=document.getElementById('win');
     window.setInterval(loop, 10);
     initFlame();
+    initBlowUp();
     reset();
 }
 
@@ -46,9 +47,20 @@ function initBlowUp()
 {
     blowUp= new BlowUp('blowup');
     blowUp.scaleTo(2.0);
-    var blowUp = document.getElementById('blowup');
-   blowUp.style.display = 'block';
+    
 
+}
+
+function startBlowUp()
+{
+    var blowUp = document.getElementById('blowup');
+    blowUp.style.display = 'block';
+
+}
+function stopBlowUp()
+{
+    var blowUp = document.getElementById('blowup');
+    blowUp.style.display = 'none';
 }
 function displayFuel(fuel)
 {
@@ -61,7 +73,7 @@ function loop() {
         if(fuel>0)
        {
            
-        fuel=fuel-0.5;
+        fuel=fuel-0.1;
         shipSpeed -= thrustPower;
        }
  
@@ -70,31 +82,26 @@ function loop() {
         shipSpeed += gravity;
         shipPosition -= shipSpeed;
     } else {
+        if(shipSpeed>0.0012){   
+            startBlowUp();
+        }else{
+            win.style.display='block'
+        }
+        
         shipSpeed = 0;
         shipPosition = 0;
     }
-
-    if(shipSpeed >0 &&
-        shipPosition > 0)
-        {
-            layout();
-        }
-        else{
-            document.getElementById('fuel').innerHTML = 'UFO Crashed';
-           
-            initBlowUp();
-           
-        }
     
-
+        layout();  
+    
 }
 
 function reset() {
     shipPosition = 1;
     shipSpeed = 0;
     fuel=maxFuel;    
-    var blowUp = document.getElementById('blowup');
-    blowUp.style.display = 'none';
+    stopBlowUp();
+    win.style.display='none'
     layout();
 
 }
@@ -115,7 +122,7 @@ function layout() {
     var distance = height - (height * shipPosition);
 
     displayFuel(fuel);
-
+    
     lander.moveTo(canvas.clientWidth/2, lander.height()/2 + distance);
 }
 function fuelIndicator(){
