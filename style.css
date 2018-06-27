@@ -16,6 +16,13 @@ body{
    height: 100%; 
 
 }
+#ufocrash{
+    position:  absolute;
+    background: #f31111;
+   
+    top: 20px;
+    right: 20px;
+  }
 #ship {
     position:absolute;
     width:500px;
