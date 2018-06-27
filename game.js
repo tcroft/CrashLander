@@ -81,8 +81,7 @@ function loop() {
         }
         else{
             document.getElementById('fuel').innerHTML = 'UFO Crashed';
-           // var ship=document.getElementById('ship');
-            //ship.style.display='none';
+           
             initBlowUp();
            
         }
