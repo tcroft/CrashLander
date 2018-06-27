@@ -8,12 +8,22 @@ body{
     background: #cfcfcf;
     top: 20px;
     left: 20px;
-    padding: 15px    
+    padding: 15px ;
+    width: 119;
+    height: 70;  
+    opacity: 0.6;
+    
 }
 #canvas {
     background-image: url("images/bgnew.png");
    width: 100%;
    height: 100%; 
+
+}
+#lost
+{
+    font-family: 'Courier New', Courier, monospace;
+    color: red
 
 }
 #ship {
@@ -22,5 +32,21 @@ body{
     height:375px;
     background: url('images/ship.png') ;
     top: -1000px;
+}
+#flame {
+    position: absolute relative  ; 
+    width:400px;
+    height:500px;
+    display: none;
+    margin-top: 43px;
+    margin-left: 45px;
+    background: url('images/flame.png') ;
+    top: -1000px;
+    background-repeat: no-repeat;
+}
+#fuel
+{
+font-family: 'Courier New', Courier, monospace;
+color: red
 }
 
