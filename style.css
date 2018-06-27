@@ -17,11 +17,21 @@ body{
     width: 100%;
     height: 100%;
 }
+
 #ship {
     position:absolute;
     width:500px;
     height:375px;
     background: url('images/ship.png');
     top: -1000px;
+}
+#display{
+	color:red;
+	position:absolute;
+	top:20px;
+    right:100px;
+    padding:15px;
+
+
 }
 

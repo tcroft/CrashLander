@@ -9,8 +9,16 @@
         <div id="controls">
             <div>Controls</div>
             <div><button onclick="reset()">Reset</button></div>
+            
             <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
+           
+            <p>Fuel gauge:</p>
+			<meter id="mymeter" value="100" min="0" max="100" low="0" high="100" max="100">0 out of 10</meter><br>
+		
+			<!--<meter value="0.5">60%</meter>-->
         </div>
+
         <div id="ship"></div>
+        <div id="display"></div>
     </body>
 </html>
