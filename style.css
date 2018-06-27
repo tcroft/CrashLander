@@ -22,56 +22,9 @@ body{
     background: url('images/ship.png');
     top: -1000px;
 }
-#logo {
-    display: inline-block;
-    position: relative;
-  }
-  #j {
-    width: 220px;
-    height: 220px;
-    border-radius: 100%;
-    border: 20px solid purple;
-    border-right: 20px solid white;
-    border-bottom: 20px solid white;
-    -webkit-transform: rotate(45deg);
-    display: inline-block;
-  }
-  
-  #logo .speedometer {
-    width: 120px;
-    height: 120px;
-    border-radius: 100%;
-    border: 20px solid purple;
-    border-right: 20px solid white;
-    border-bottom: 20px solid white;
-    -webkit-transform: rotate(45deg);
-    display: inline-block;
-  }
-  #logo .needle {
-    width: 10px;
-    height: 90px;
-    background: #999999;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-    border-top-left-radius: 100%;
-    border-top-right-radius: 100%;
-    display: inline-block;
-    left: 70px;
-    position: absolute;
-    top: 10px;
-    -webkit-animation: move 5s infinite;
-    transform: rotate(0deg);
-    transform-origin: bottom;
-  }
-  @-webkit-keyframes move {
-    0% {
-      transform: rotate(-90deg);
-    }
-    50% {
-      transform: rotate(90deg);
-    }
-    100% {
-      transform: rotate(-90deg);
-    }
-  }
-
+#landingPlatform{
+  width: 87px;
+  height: 37px;
+  background:url('images/landingpad.png');
+  margin-top: -50px;
+}
