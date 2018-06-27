@@ -17,10 +17,12 @@ body{
 
 }
 #ufocrash{
-    top: 80px;
-    left: 40px;
-     
-}
+    position:  absolute;
+    background: #f31111;
+   
+    top: 20px;
+    right: 20px;
+  }
 #ship {
     position:absolute;
     width:500px;

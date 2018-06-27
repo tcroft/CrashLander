@@ -25,21 +25,25 @@ function displayFuel(fuel){
     document.getElementById('fuel').innerHTML ='Fuel is : '+fuel;
     }	
 function display(){
-    document.getElementById('crash').innerHTML ='Oops your plane has crashed... ';
+    document.getElementById('crash').innerHTML ='your fuel is empty youre going to crash.. ';
+}
+function success(){
+
 }
 function loop() {
   
     if (thrust) {
         if(fuel>0){
-            fuel-=1;
+            fuel-=0.1;
             displayFuel(fuel);
 
                     
         }
         if(fuel==0){
-        stopThrust();   
-    
+            display();
+            stopThrust();   
         }
+        
         shipSpeed -= thrustPower;
         
     }
@@ -50,14 +54,21 @@ function loop() {
     } else {
         shipSpeed = 0;
         shipPosition = 0;
+    
     }
-   
+    /*if(shipPosition==0){
+        console.log("crash");
+    }
+   */
     layout();
 }
 
 function reset() {
     shipPosition = 1;
     shipSpeed = 0;
+    fuel=100;
+    document.getElementById('crash').innerHTML ='';
+ 
     layout();
 }
 
@@ -67,6 +78,7 @@ function startThrust() {
 
 function stopThrust() {
      thrust = false;
+     console.log("trashed");
 
 }
 function layout() {
@@ -75,10 +87,6 @@ function layout() {
 
     lander.moveTo(canvas.clientWidth/2, lander.height()/2 + distance);
  }
-function fuelIndicator(){
-
-    return distance;
-}
 
 
 
