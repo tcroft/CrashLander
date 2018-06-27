@@ -22,4 +22,10 @@ body{
     background: url('images/ship.png');
     top: -1000px;
 }
+#landingPlatform{
+  width: 87px;
+  height: 37px;
+  background:url('images/landingpad.png');
+  margin-top: -50px;
 
+}
