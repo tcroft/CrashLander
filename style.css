@@ -12,8 +12,23 @@ body{
     left: 20px;
     padding: 15px    
 }
+
+#landed {
+    position: absolute;
+    background: #338619;
+    top: 50px;
+    right: 20px;  
+}
+
+#crashed {
+    position: absolute;
+    background: #db4719;
+    top: 50px;
+    right: 20px;  
+}
+
 #canvas {
-    background-image:url('images/background.png')  ;
+    background-image:url('images/background.jpg')  ;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 1680px 1080px;
@@ -27,4 +42,18 @@ body{
     background: url('images/ship.png') ;
     top: -1000px;
 }
+
+
+#crash {
+    position: absolute relative  ;
+    width:550px;
+    height:500px;
+    display: none;
+     margin-left: 45px;
+    background: url('images/explosion.jpg') ; 
+    top: 0px;
+    background-repeat: no-repeat;
+
+}
+
 
