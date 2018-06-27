@@ -4,10 +4,12 @@ body{
 }
 
 #controls {
+    height: 10pc;
+    width: 20pc;
     position: absolute;
     background: #cfcfcf;
-    top: 20px;
-    left: 20px;
+    top: 600px;
+    left: 200px;
     padding: 15px    
 }
 #canvas {
@@ -23,3 +25,9 @@ body{
     top: -1000px;
 }
 
+#button {
+   width: 100px;
+   height: 100px;
+   top:60px;
+    left:60px;
+    }

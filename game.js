@@ -3,6 +3,7 @@ var lander;
 var canvas;
 
 var state;
+var fuel=100;
 var shipPosition;
 var shipSpeed;
 var gravity = .00001;
@@ -16,13 +17,23 @@ function initGame() {
     canvas = document.getElementById('canvas');
 
     window.setInterval(loop, 10);
-
+    
     reset();
 }
 
 function loop() {
 
     if (thrust) {
+           if(fuel>0){
+           fuel=fuel-10;
+           dispFuel(fuel);
+        }
+       if(fuel==0){
+           stopThrust();
+           showMsg(fuel)
+       }
+        
+
         shipSpeed -= thrustPower;
     }
 
@@ -32,14 +43,16 @@ function loop() {
     } else {
         shipSpeed = 0;
         shipPosition = 0;
+        
     }
     layout();
 }
 
 function reset() {
+    var fuel=100;
+    document.getElementById("fuel").innerHTML=fuel;
     shipPosition = 1;
     shipSpeed = 0;
-
     layout();
 }
 
@@ -56,4 +69,23 @@ function layout() {
     var distance = height - (height * shipPosition);
 
     lander.moveTo(canvas.clientWidth/2, lander.height()/2 + distance);
+}
+
+function dispFuel(fuel){
+    this.fuel=fuel;
+    document.getElementById("fuel").innerHTML=fuel;
+    
+}
+function showMsg(fuel)
+{
+    document.getElementById("msg").innerHTML="fuel is:"+fuel+"plz fill the fuel";
+    goDown(fuel);
+}
+
+
+
+function gameOver(shipPosition){
+    if(hipPosition==0){
+      window.alert("oops...Game Over...");
+    }
 }
