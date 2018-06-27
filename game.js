@@ -14,23 +14,31 @@ var fuelmaxFuel;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
-    //flame = new Flame('flame');
-    //flame.scaleTo(.2);
-
+    
+    
     canvas = document.getElementById('canvas');
 
     window.setInterval(loop, 10);
-
+    initFlame();
     reset();
 }
 
 function initFlame()
 {
-    
+
     flame = new Flame('flame');
-    flame.scaleTo(.2);
+    flame.scaleTo(.2);   
+}
+
+function showFlame()
+{
     var flame = document.getElementById('flame');
     flame.style.display = 'block';
+}
+function hideFlame()
+{
+var flame = document.getElementById('flame');
+    flame.style.display = 'none';
 
 }
 function displayFuel(fuel)
@@ -79,13 +87,12 @@ function reset() {
 
 function startThrust() {
     thrust = true;  
-    initFlame();
+    showFlame();
 }
 
 function stopThrust() {
     thrust = false;
-    var flame = document.getElementById('flame');
-    flame.style.display = 'none';
+    hideFlame();
 }
 
 function layout() {
