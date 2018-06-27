@@ -10,7 +10,7 @@ body{
     left: 20px;
     padding: 15px ;
     width: 119;
-    height: 70;  
+    height: 170;  
     opacity: 0.6;
     
 }
@@ -71,3 +71,17 @@ color: red
     height:500px;
     position: absolute relative  ;
 }
+
+    button {
+        background-color: indianred;
+        border: none;
+       
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
