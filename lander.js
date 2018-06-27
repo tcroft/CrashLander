@@ -4,11 +4,13 @@ function Lander(id) {
     if (div == null) {
         console.log("Could not find lander '" + id + "'");
     }
-    var scale = 100;
+    var scale = 1;
+    
 
     this.moveTo = function(x, y) {
         div.style.top = y - div.clientHeight/2;
         div.style.left = x - div.clientWidth/2;
+        //div.style.right = x + div.clientwidth/2;
     }
 
     this.scaleTo = function(newScale) {
@@ -23,5 +25,8 @@ function Lander(id) {
     this.height = function() {
         return div.clientHeight * scale;
     }
+    
+    //this.right = function() {
+    //	return div.clientwidth * scale; }
 }
 
