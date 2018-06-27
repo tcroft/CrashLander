@@ -35,20 +35,16 @@ function loop() {
             fuel-=0.25;
             displayFuel(fuel);
         }
-        if(fuel==0){
-            crashdown();
-        }   
         shipSpeed -= thrustPower;
     }
 
-
-    if (shipPosition > 0 || thrust) {
+    if (shipPosition > 0 || thrust && fuel > 0) {
         shipSpeed += gravity;
         shipPosition -= shipSpeed;
     } else {
         shipSpeed = 0;
         shipPosition = 0;
-        meter.value =100;
+       
     }
     layout();
 }
@@ -56,7 +52,7 @@ function loop() {
 function reset() {
     shipPosition = 1;
     shipSpeed = 0;
-
+    meter.value =100;
     layout();
 }
 
