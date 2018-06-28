@@ -62,7 +62,7 @@ function loop() {
 function fail()
 {
 
-    document.getElementById("fail").innerHTML="Game Over....";  
+    //document.getElementById("fail").innerHTML="Game Over....";  
         ship.style.background="url('images/final.gif')";
         
 }
@@ -78,6 +78,7 @@ function reset() {
     document.getElementById("fuel").innerHTML=fuel;
     shipPosition = 1;
     shipSpeed = 0;
+    land=false;
     layout();
 }
 
