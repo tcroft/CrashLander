@@ -102,9 +102,9 @@ function reset() {
 }
 
 function startThrust() {
-    thrust = true;
-    flame.style.display = '';
     if (fuel > 0) {
+        thrust = true;
+        flame.style.display = '';
         thrustAudio.play();
     }
 }
