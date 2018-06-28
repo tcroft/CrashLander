@@ -9,6 +9,7 @@ var shipSpeed;
 var gravity = .00001;
 var thrustPower = .00002;
 var thrust = false;
+var done;
 
 function initGame() {
     lander = new Lander('ship');
@@ -24,32 +25,56 @@ function initGame() {
 function loop() {
 
     if (thrust) {
-           if(fuel>0){
-           fuel=fuel-10;
+           if(fuel>0.2){
+           fuel=fuel-0.2;
            dispFuel(fuel);
+           shipSpeed-=thrustPower;  
         }
+    }
        if(fuel==0){
+           //shipPosition=0;
            stopThrust();
-           showMsg(fuel)
+           
        }
         
-
-        shipSpeed -= thrustPower;
-    }
-
-    if (shipPosition > 0 || thrust) {
+    if (shipPosition > 0 || (thrust&&fuel>0)) {
         shipSpeed += gravity;
         shipPosition -= shipSpeed;
+        
     } else {
+        if(!done){
+            if(shipSpeed>0.0012)
+            {
+                fail();
+            }
+            else{
+                land();
+                
+            }
+        }
         shipSpeed = 0;
         shipPosition = 0;
+       done=true;
         
     }
     layout();
 }
+function fail()
+{
+
+    document.getElementById("fail").innerHTML="Game Over....";  
+        ship.style.background="url('images/final.gif')";
+        
+}
+function land()
+{
+    document.getElementById("success").innerHTML="Landed successfully";
+
+}
 
 function reset() {
     var fuel=100;
+    ship.style.background="url('images/ship.png')";
     document.getElementById("fuel").innerHTML=fuel;
     shipPosition = 1;
     shipSpeed = 0;
@@ -74,18 +99,15 @@ function layout() {
 function dispFuel(fuel){
     this.fuel=fuel;
     document.getElementById("fuel").innerHTML=fuel;
+   
     
 }
 function showMsg(fuel)
 {
     document.getElementById("msg").innerHTML="fuel is:"+fuel+"plz fill the fuel";
-    goDown(fuel);
+
 }
 
 
 
-function gameOver(shipPosition){
-    if(hipPosition==0){
-      window.alert("oops...Game Over...");
-    }
-}
+
