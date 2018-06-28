@@ -111,6 +111,7 @@ function displayFuel(fuel){
 function crashdown(){
     ship.style.background="url('images/blast.gif')"
     document.getElementById("Crashed").innerHTML = "Crashed";
+    exitFire();
 }
 function successful(){
     document.getElementById("Successful").innerHTML="Ship Landed Safely";
