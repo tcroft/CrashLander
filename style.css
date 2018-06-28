@@ -31,7 +31,14 @@ body{
 	top:20px;
     right:100px;
     padding:15px;
-
-
+    
+}
+#blast{
+	bottom:30px;
+	position:absolute;
+	background:url('images/explosion-animated-gif-1.gif');
+	
+	display:none;
+	
 }
 

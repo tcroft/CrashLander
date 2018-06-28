@@ -1,7 +1,6 @@
 
 var lander;
 var canvas;
-
 var state;
 var shipPosition;
 var shipSpeed;
@@ -10,79 +9,83 @@ var thrustPower = .00002;
 var thrust = false;
 var landed=false;
 var fuel=100;
+var animation;
+var win= false;
+var blaster;
 
 function initGame() {
-
     lander = new Lander('ship');
     lander.scaleTo(.5);
-
     canvas = document.getElementById('canvas');
-
+    console.log(canvas);
+   // document.getElementById("mymeter");
     window.setInterval(loop, 10);
-    
-    
+	
     reset();
-    
-    document.getElementById("mymeter");
-    //document.getElementById("demo").innerHTML = "The value of the value attribute was changed from '65' to '50'.";
-}
+
+    }
 
 function initDisplay(){
-	//diplay= new display('display');
 	console.log("game over");
 	console.log(display);
 	document.getElementById('display').innerHTML = "GAME OVER";
+	ship.style.background="url('images/explosion-animated-gif-1.gif')";
 	
 
 }
+
+
 
 function loop() {
 
     if (thrust) {
     	if(fuel>0){
-    		fuel-=0.5;
+    		fuel-=0.25;
+    		console.log("shipSpeed=" +shipSpeed);
     		shipSpeed -= thrustPower;
+    		document.getElementById("mymeter");
     		mymeter.value=fuel;
     	}
-        
-       // document.Write("Game Over!!!");
     }
 
-    if (shipPosition > 0 || thrust) {
+    if (shipPosition > 0 || (thrust && fuel >0)) {
         shipSpeed += gravity;
         shipPosition -= shipSpeed;
-    } else {
+        if(shipSpeed<0.0002 && shipPosition==1){
+        	win=true;
+        	if(win){
+        		document.getElementById('display').innerHTML = "congratulations!! You Win!!";
+        	}
+    	}
+    }
+        
+       // stopThrust();
+    else {
         shipSpeed = 0;
         shipPosition = 0;
-        //console.log("shipPosition=" +shipPosition);
-       // console.log("landed=" +landed);
-    	 
-			
-			if(!landed){ 
+        //stopThrust();
+   		if(!landed){ 
 			    initDisplay();	
-			}
-		
+			    
+		}	
         landed=true;
         
     }
-    
     layout();
-
 }
 
-
 function reset() {
+ 	mymeter.value=100;
+ 	ship.style.background="url('images/ship.png')";
     shipPosition = 1;
     shipSpeed = 0;
-	
+    landed=false;
     layout();
+   
 }
 
 function startThrust() {
     thrust = true;
-    
-    
-    
 }
 
 function stopThrust() {
@@ -90,16 +93,7 @@ function stopThrust() {
 }
 
 function layout() {
- 	
-	
-   
     var height = canvas.clientHeight - lander.height();
     var distance = height - (height * shipPosition);
-	//var movement = height + (right * shipPosition);
-	
-	
-	
     lander.moveTo(canvas.clientWidth/2, lander.height()/2 + distance);
-
-    
 }

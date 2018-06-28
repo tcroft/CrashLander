@@ -1,7 +1,7 @@
-function Lander(id) {
+function Blaster(id) {
     var div = document.getElementById(id);
     if (div == null) {
-        console.log("Could not find lander '" + id + "'");
+        console.log("Could not find blaster '" + id + "'");
     }
     var scale = 1;
     
@@ -26,4 +26,3 @@ function Lander(id) {
     }
 
 }
-
