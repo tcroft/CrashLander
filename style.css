@@ -11,7 +11,9 @@ body{
     padding: 15px    
 }
 #canvas {
-    background:url('images/nasa.jpg');
+    
+    background:url('images/ground.jpg');
+    background-size: 150%;
     width: 100%;
     height: 100%;
 }
@@ -26,6 +28,37 @@ body{
   width: 87px;
   height: 37px;
   background:url('images/landingpad.png');
+  
   margin-top: -50px;
 
+}
+#Successful{
+    
+        position: absolute;
+        background: red;
+        top: 20px;
+        right: 20px;
+        
+        
+}
+#Crashed{
+    
+    position: absolute;
+    color:rgb(8, 8, 8);
+    top: 20px;
+    right: 20px;
+    height:30px;
+    width: 45px;
+    
+    
+}
+#fire{
+    position: absolute;
+    width: 89px;
+    height: 39px;
+    top: -1000px;
+    bottom:500px;
+}
+#blast{
+    position: absolute;
 }

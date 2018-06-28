@@ -8,7 +8,9 @@ var shipSpeed;
 var gravity = .00001;
 var thrustPower = .00002;
 var thrust = false;
-var fuel=100;
+var maxFuel=100;
+var landed=false;
+var blast;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
@@ -24,35 +26,51 @@ function showLander()
 {
     landingPlatform = new LandingPlatform('landingPlatform');
     landingPlatform.scaleTo(.5);
-
-
 }
-
 function loop() {
 
     if (thrust) {
         if((fuel>0)){
             fuel-=0.25;
             displayFuel(fuel);
+
         }
         shipSpeed -= thrustPower;
     }
 
-    if (shipPosition > 0 || thrust && fuel > 0) {
+    if (shipPosition > 0 || (thrust && fuel > 0)) {
         shipSpeed += gravity;
         shipPosition -= shipSpeed;
-    } else {
+    } 
+    else {
+        
+        if(!landed){
+            console.log("landed");
+
+        if(shipSpeed <=0.0012){
+           successful();
+            
+           // fuel=0;
+        }
+        else{
+            crashdown();
+        }
+    }
         shipSpeed = 0;
         shipPosition = 0;
-       
+       landed=true;
     }
+
     layout();
 }
 
 function reset() {
     shipPosition = 1;
     shipSpeed = 0;
-    meter.value =100;
+    fuel=maxFuel;
+    ship.style.background="url('images/ship.png')"
+    document.getElementById("Crashed").innerHTML = "";
+    document.getElementById("Successful").innerHTML = "";
     layout();
 }
 
@@ -74,5 +92,9 @@ function displayFuel(fuel){
     meter.value=fuel;
 }
 function crashdown(){
-    shipPosition=0;
+    ship.style.background="url('images/blast.gif')"
+    document.getElementById("Crashed").innerHTML = "Crashed";
+}
+function successful(){
+    document.getElementById("Successful").innerHTML="Landed Safely";
 }

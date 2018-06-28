@@ -4,6 +4,8 @@
         <script src="lander.js"></script>
         <script src="landingPlatform.js"></script>
         <script src="game.js"></script>
+        
+        
 
     </head>
     <body onload="initGame()">
@@ -12,8 +14,8 @@
     </div>
         <div>
             <div id="ship"></div>
-            
             <div id="landingPlatform"></div>
+            <div id="blast"></div>
         
     </div>
         <div id="controls">
@@ -22,8 +24,14 @@
             <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
 
             <p >Fuel Meter</p>
-            <meter id="fuel" min="0" max="100">fuel</meter><br>
+            <meter id="fuel" min="0" max="100" value ="100">fuel</meter><br>
         
+        </div>
+        <div id="Success">
+            <div id="Successful"></div>
+        </div>
+        <div id="Crash">
+            <div id="Crashed"></div>
         </div>
         
     </body>
