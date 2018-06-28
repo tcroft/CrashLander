@@ -4,7 +4,7 @@ body{
 }
 
 #controls {
-    height: 10pc;
+    height: 8pc;
     width: 10pc;
     position: absolute;
     background: #cfcfcf;
@@ -25,6 +25,17 @@ body{
     background:url('images/ship.png');
     top: -1000px;
 }
+#flame {
+    background-size: 10pc;
+    position: absolute relative  ; 
+    width:400px;
+    height:500px;
+    margin-top: 45px;
+    margin-left: 50px;
+    background: url('images/transflame.png') ;
+    top: -1000px;
+    background-repeat: no-repeat;
+}
 #success
 {
     font-size: 5pc;
@@ -43,7 +54,7 @@ body{
     height: 40px;
     width: 60px;
     top: 50px;
-    left: 750px;
+    left: 725px;
 }
 
 #button {
@@ -55,8 +66,8 @@ body{
 
     #blast {
         position:absolute;
-        width:200px;
-        height:375px;
+        width:100%;
+        height:100%;
         background:url('images/final.gif');
-        background-size: 20pc;
+        background-size: 100%
     }
