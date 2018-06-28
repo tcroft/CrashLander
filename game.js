@@ -1,7 +1,7 @@
 
 var lander;
 var canvas;
-
+var flame;
 var state;
 var fuel=100;
 var shipPosition;
@@ -14,11 +14,9 @@ var done;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
-
     canvas = document.getElementById('canvas');
-
     window.setInterval(loop, 10);
-    
+    initFlame();
     reset();
 }
 
@@ -62,8 +60,10 @@ function loop() {
 function fail()
 {
 
-    //document.getElementById("fail").innerHTML="Game Over....";  
-        ship.style.background="url('images/final.gif')";
+       document.getElementById("fail").innerHTML="Game Over....";  
+        ship.style.background="url('images/final.gif') no-repeat";
+        hideFlame();
+        
         
 }
 function land()
@@ -75,19 +75,24 @@ function land()
 function reset() {
     var fuel=100;
     ship.style.background="url('images/ship.png')";
+    document.getElementById("fail").innerHTML=" ";  
+    document.getElementById("success").innerHTML=" ";
     document.getElementById("fuel").innerHTML=fuel;
     shipPosition = 1;
     shipSpeed = 0;
-    land=false;
+    done=false;
+    initFlame();
     layout();
 }
 
 function startThrust() {
     thrust = true;
+    showFlame();
 }
 
 function stopThrust() {
     thrust = false;
+    hideFlame();
 }
 
 function layout() {
@@ -108,7 +113,20 @@ function showMsg(fuel)
     document.getElementById("msg").innerHTML="fuel is:"+fuel+"plz fill the fuel";
 
 }
+function initFlame()
+{
 
+    flame = new Flame('flame');
+    flame.scaleTo(.4);   
+}
 
-
-
+function showFlame()
+{
+    var flame = document.getElementById('flame');
+    flame.style.display = 'block';
+}
+function hideFlame()
+{
+var flame = document.getElementById('flame');
+    flame.style.display = 'none';
+}
