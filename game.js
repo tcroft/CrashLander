@@ -5,11 +5,13 @@ var canvas;
 var state;
 var shipPosition;
 var shipSpeed;
-var gravity = .00001;
-var thrustPower = .00002;
+var gravity = .000005;
+var thrustPower = .00003;
 var thrust = false;
 var fuel=100;
 var maxfuel;
+var done;
+var ship;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
@@ -27,33 +29,47 @@ function displayFuel(fuel){
 function displayEmptyFuel(){
     document.getElementById('crash').innerHTML ='your fuel is empty youre going to crash.. ';
 }
+function displayLandingSuccess(){
+document.getElementById('landingsucces').innerHTML='successfully landed...';
+}
 function loop() {
   
     if (thrust) {
         if(fuel>0){
             fuel-=0.5;
             displayFuel(fuel);
-
-                    
-        }
-        if(fuel==0){
+            shipSpeed -= thrustPower;
+            
+        }/* else if(fuel==0){
             displayEmptyFuel();
             stopThrust();   
-        }
-        
-        shipSpeed -= thrustPower;
-        
+        } */
+           
     }
     
-    if (shipPosition > 0 || thrust) {
+    if (shipPosition > 0 || thrust&&fuel>0) {
         shipSpeed += gravity;
         shipPosition -= shipSpeed;
-    } else {
+        
+      
+    }else {
+        if(!done){
+
+            if(shipSpeed<=0.0012){
+                document.getElementById('crash').innerHTML ='landed successfully..';
+               fuel=0;
+        
+            
+            }else {
+                    document.getElementById('crash').innerHTML ='your plane crashed... ';
+                     done=true;
+                 }
+        }
         shipSpeed = 0;
         shipPosition = 0;
-    
     }
-    layout();
+     
+layout();
 }
 
 function reset() {
@@ -61,7 +77,8 @@ function reset() {
     shipSpeed = 0;
     fuel=100;
     document.getElementById('crash').innerHTML ='';
- 
+    document.getElementById('landingsuccess').innerHTML ='';
+//win.style.display="none";
     layout();
 }
 

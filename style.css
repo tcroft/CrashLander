@@ -30,4 +30,21 @@ body{
     background: url('images/ship.png') ;
     top: -1000px;
 }
-
+#crashgif{
+    background: url('images/crashgif.gif') ;
+    position: absolute relative  ;
+    width:550px;
+    height:500px;
+    display: none;
+    margin-left: 45px;
+    top: 0px;
+    background-repeat: no-repeat;
+}
+#success{
+    position:  absolute;
+    background: #11f311;
+   
+    top: 20px;
+    right: 20px;
+    
+}
