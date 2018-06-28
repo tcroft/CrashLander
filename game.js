@@ -12,7 +12,7 @@ var maxFuel=100;
 var fuelmaxFuel;
 var blowUp;
 var win;
-
+var thrustAudio;
 function initGame() {
     lander = new Lander('ship');
     lander.scaleTo(.5);
@@ -21,7 +21,9 @@ function initGame() {
     window.setInterval(loop, 10);
     initFlame();
     initBlowUp();
-  
+    thrustAudio= document.getElementById("thrustAudio"); 
+
+    
     reset();
 }
 
@@ -30,16 +32,24 @@ function initFlame()
     flame = new Flame('flame');
     flame.scaleTo(.2);   
 }
+function playthrustAudio() { 
+    thrustAudio.play(); 
+} 
 
+function pausethrustAudio() { 
+    thrustAudio.pause(); 
+}
 function showFlame()
 {
     var flame = document.getElementById('flame');
     flame.style.display = 'block';
+    playthrustAudio();
 }
 function hideFlame()
 {
 var flame = document.getElementById('flame');
     flame.style.display = 'none';
+    pausethrustAudio();
 }
 function initBlowUp()
 {
