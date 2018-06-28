@@ -8,20 +8,70 @@ body{
 #controls {
     position: absolute;
     background: #cfcfcf;
+    color: coral;
     top: 20px;
     left: 20px;
     padding: 15px    
 }
+
+#landed {
+    position: absolute;
+    color: green;
+
+    font-size: 3pc;
+    top: 50px;
+    left: 400px;   
+}
+
+#crashed {
+    position: absolute;
+    color: red;
+    font-size: 3pc;
+    top: 50px;
+    left: 400px;  
+}
+
 #canvas {
-    background-image: url("background.jpg");
+    background-image:url('images/background.jpg')  ;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1680px 1080px;
     width: 100%;
     height: 100%;
 }
+
+#flame {
+    position: absolute relative  ; 
+    width:400px;
+    height:500px;
+    display: none;
+    margin-top: 43px;
+    margin-left: 45px;
+    background: url('images/flame.png') ;
+    top: -1000px;
+    background-repeat: no-repeat;
+}
+
+#explosion {
+    position: absolute relative  ; 
+    width:400px;
+    height:500px;
+    display: none;
+    margin-top: 43px;
+    margin-left: 45px;
+    background: url('images/explosion.gif') ;
+    top: -1000px;
+    background-repeat: no-repeat;
+}
+
 #ship {
     position:absolute;
     width:500px;
     height:375px;
-    background: url('images/ship.png');
+    background: url('images/ship.png') ;
     top: -1000px;
 }
+
+
+
 
