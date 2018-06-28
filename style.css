@@ -28,38 +28,35 @@ body{
   width: 87px;
   height: 37px;
  /* background:url('images/landingpad.png');*/
-  
   margin-top: -50px;
-
 }
 #Successful{
-    
         position: absolute;
         background: red;
-        font-size: 100px;
+        font-size: 75px;
         top: 40pc;
-        left: 40pc;
-        
-        
+        left: 40pc;    
 }
-#Crashed{
-    
+#Crashed{ 
     position: absolute;
     color:rgb(8, 8, 8);
     top: 40pc;
     left: 43pc;
     height:30px;
     width: 45px;
-    font-size: 100px;
-    
-    
+    font-size: 100px;  
 }
 #fire{
-    position: absolute;
-    width: 89px;
-    height: 39px;
+    position: absolute relative;
+    background-size: 1opc;
+    width: 250px;
+    height: 250px;
+    margin-top: 130px;
+    margin-left: 120px;
+    background: url('images/fire.png');
     top: -1000px;
-    bottom:500px;
+    background-repeat:no-repeat; 
+    
 }
 #blast{
     position: absolute;
