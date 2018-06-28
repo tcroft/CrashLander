@@ -5,7 +5,7 @@ body{
 
 #controls {
     height: 10pc;
-    width: 20pc;
+    width: 10pc;
     position: absolute;
     background: #cfcfcf;
     top: 600px;
@@ -13,7 +13,8 @@ body{
     padding: 15px    
 }
 #canvas {
-    background: url('images/bg.png');
+    background: url('images/backnew.jpg');
+    background-size:100%;
     width: 100%;
     height: 100%;
 }
@@ -21,8 +22,28 @@ body{
     position:absolute;
     width:500px;
     height:375px;
-    background: url('images/ship.png');
+    background:url('images/ship.png');
     top: -1000px;
+}
+#success
+{
+    font-size: 5pc;
+    position: absolute;
+    color:green;
+    height: 40px;
+    width: 60px;
+    top: 50px;
+    left: 700px
+}
+#fail
+{
+    font-size: 5pc;
+    position: absolute;
+    color:red;
+    height: 40px;
+    width: 60px;
+    top: 50px;
+    left: 750px;
 }
 
 #button {
@@ -30,4 +51,12 @@ body{
    height: 100px;
    top:60px;
     left:60px;
+    }
+
+    #blast {
+        position:absolute;
+        width:200px;
+        height:375px;
+        background:url('images/final.gif');
+        background-size: 20pc;
     }
