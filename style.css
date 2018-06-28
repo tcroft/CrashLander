@@ -27,7 +27,7 @@ body{
 #landingPlatform{
   width: 87px;
   height: 37px;
-  background:url('images/landingpad.png');
+ /* background:url('images/landingpad.png');*/
   
   margin-top: -50px;
 
@@ -36,8 +36,9 @@ body{
     
         position: absolute;
         background: red;
-        top: 20px;
-        right: 20px;
+        font-size: 100px;
+        top: 40pc;
+        left: 40pc;
         
         
 }
@@ -45,10 +46,11 @@ body{
     
     position: absolute;
     color:rgb(8, 8, 8);
-    top: 20px;
-    right: 20px;
+    top: 40pc;
+    left: 43pc;
     height:30px;
     width: 45px;
+    font-size: 100px;
     
     
 }
