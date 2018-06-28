@@ -12,6 +12,8 @@ var fuel=100;
 var maxfuel;
 var done;
 var ship;
+var flame;
+var snd = new sound("images/blast.mp3");
 function initGame() {
 
     lander = new Lander('ship');
@@ -30,20 +32,25 @@ function displayFuel(fuel){
 function displayEmptyFuel(){
     document.getElementById('crash').innerHTML ='your fuel is empty youre going to crash.. ';
 }
+var x;
+x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+    x.play(); 
+} 
+
 function displayLandingSuccess(){
     document.getElementById('crash').innerHTML ='landed successfully..';
     document.getElementById("ship").style.backgroundImage="url('images/land2.gif')" ;
+    document.getElementById("linkmsg").innerHTML='Play Again..';
+   // snd.play();
+playAudio();
+          
              
  
 //    document.getElementById('landingsucces').innerHTML='successfully landed...';
 }
-var sound = new Howl({
-    urls: ['sounds.mp3', 'sounds.ogg'],
-    sprite: {
-      blast: [0, 2000],
-      winner: [5000, 9000]
-    }
-  });
+
 function loop() {
   
     if (thrust) {
@@ -68,9 +75,8 @@ function loop() {
             else {
                     document.getElementById('crash').innerHTML ='your plane crashed... ';
                document.getElementById("ship").style.backgroundImage="url('images/crash.gif')" ;
-               
-               sound.play('blast');
                document.getElementById("linkmsg").innerHTML='Try Again..';
+               snd.play();
                done=true; 
                 }
                 }
@@ -111,4 +117,7 @@ function layout() {
  }
 
 
+function intitFlame(){
+    flame =document.getElementById('frame');
 
+}

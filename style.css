@@ -29,6 +29,7 @@ body{
     height:375px;
     background: url('images/ship.png') ;
     top: -1000px;
+    left :379.5px;
 }
 #crashgif{
     background: url('images/crashgif.gif') ;
@@ -54,7 +55,7 @@ body{
     left: 50%;
     width:30em;
     height:18em;
-    margin-top: -9em; /*set to a negative number 1/2 of your height*/
-    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    margin-top: -13em; /*set to a negative number 1/2 of your height*/
+    margin-left: -4em; /*set to a negative number 1/2 of your width*/
     
 }

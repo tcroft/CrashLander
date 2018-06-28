@@ -3,16 +3,17 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="lander.js"></script>
         <script src="game.js"></script>
+        <script></script>
     </head>
     <body onload="initGame()">
         <div id="canvas"></div>
-        <div id="ship"></div>
+        <div id="ship"><div id="flame"></div></div>
     </div>
    
         <div id="controls">
             <div>Controls</div>
-            <div><button onclick="reset()">Reset</button></div>
-            <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
+         <!--   <div><button onclick="reset()">Reset</button></div>-->
+           <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
             <div id="fuel"><font color="red">Fuel is</font></div>
          <!--   <input type="range" id="a" value="50">-->
         </div>
@@ -26,11 +27,14 @@
     </div> 
     <div id="tryagain">
         <div id="hrefmsg">
-<h1>            
-<a id="linkmsg" href="file:///Users/mdatar/mangesh/CrashLander/index.html"></a>
+<h1>          
+<a id="linkmsg" href="file:///Users/mdatar/mangesh/CrashLander/index.html">  </a>
 </h1>
 </div>
     </div>
-       
+    <audio id="myAudio">
+            <source src="images/blast.mp3" type="audio/mp3">
+          </audio>
+          
        </body>
 </html>
