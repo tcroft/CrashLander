@@ -3,6 +3,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         <script src="lander.js"></script>
         <script src="game.js"></script>
+        <script src="blaster.js"></script>
     </head>
     <body onload="initGame()">
         <div id="canvas"></div>
@@ -13,12 +14,14 @@
             <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
            
             <p>Fuel gauge:</p>
-			<meter id="mymeter" value="100" min="0" max="100" low="0" high="100" max="100">0 out of 10</meter><br>
+			<meter id="mymeter" value="100" min="0" max="100"  ></meter><br>
 		
 			<!--<meter value="0.5">60%</meter>-->
         </div>
-
+		
         <div id="ship"></div>
+        <div id="blast"></div>
         <div id="display"></div>
+        <div id="animation"></div>
     </body>
 </html>
