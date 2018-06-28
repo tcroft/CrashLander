@@ -30,18 +30,11 @@ function initDisplay(){
 	console.log(display);
 	document.getElementById('display').innerHTML = "GAME OVER";
 	ship.style.background="url('images/explosion-animated-gif-1.gif')";
-	blasted();
+	
 
 }
 
-function blasted(){
 
-		blaster = new Blaster('blast');
-    	blaster.scaleTo(.5);
-    	blast.style.display='block';
-    	canvas = document.getElementById('canvas');
-    	
-}
 
 function loop() {
 
@@ -84,11 +77,9 @@ function loop() {
 function reset() {
  	mymeter.value=100;
  	ship.style.background="url('images/ship.png')";
- 	lander = new Lander('ship');
-    lander.scaleTo(.5);
-    blast.style.display='block';
     shipPosition = 1;
     shipSpeed = 0;
+    landed=false;
     layout();
    
 }
