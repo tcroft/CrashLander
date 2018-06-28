@@ -11,18 +11,21 @@
         <div id="canvas">
             <div id="lost"><div>
         </div>
+        <audio id="thrustAudio">
+            <source src="Sound/Thrust.mp3" type="audio/mp3">
+          </audio>
         <div id="controls">
             <div>Controls</div>
-            <div><button onclick="reset()">Reset</button></div>
-            <div><button onmousedown="startThrust()" onmouseup="stopThrust()">Thrust</button></div>
+            <div><button onclick="reset()" id="reset"> <img src="images/reset.png" width="100" height="70"> </button></div>
+            <div ><button onmousedown="startThrust()" onmouseup="stopThrust()" id="thrust"><img src="images/thrust.png" width="80" height="50"> </button></div>
 
             <font style="color: darkgreen">Fuel gauge</font>
             <meter id="fuelGauge" value="100" low="0" max="100" ></meter>
             <div id="fuel" ></div>
         </div>
         <div id="ship"><div id="flame"></div>
-        <div id="blowup"><button onclick="reset()">UFO crashed!!! Click to Play Again</button></div>
-        <div id="win" ><button id="winbutton"onclick="reset()">You Win</button></div>
+        <div id="blowup"><button onclick="reset()" id="reset"> <img src="images/Gameover.png" width="100" height="70" > </button></div>
+        <div id="win" ><button id="winbutton"onclick="reset()"><img src="images/Win.jpg" width="200" height="80"></button></div>
         
         </div>
        
