@@ -62,7 +62,7 @@ function fail()
 
        document.getElementById("fail").innerHTML="Game Over....";  
         ship.style.background="url('images/final.gif') no-repeat";
-        hideFlame();
+        removeFlame();
         
         
 }
@@ -87,12 +87,12 @@ function reset() {
 
 function startThrust() {
     thrust = true;
-    showFlame();
+    displayFlame();
 }
 
 function stopThrust() {
     thrust = false;
-    hideFlame();
+    removeFlame();
 }
 
 function layout() {
@@ -120,12 +120,12 @@ function initFlame()
     flame.scaleTo(.4);   
 }
 
-function showFlame()
+function displayFlame()
 {
     var flame = document.getElementById('flame');
     flame.style.display = 'block';
 }
-function hideFlame()
+function removeFlame()
 {
 var flame = document.getElementById('flame');
     flame.style.display = 'none';

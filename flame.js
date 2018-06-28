@@ -2,7 +2,7 @@
 function Flame(id) {
     var div = document.getElementById(id);
     if (div == null) {
-        console.log("Could not find lander '" + id + "'");
+        console.log("Could not find flame '" + id + "'");
     }
     var scale = 1;
 
