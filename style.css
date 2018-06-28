@@ -33,12 +33,18 @@ body{
     padding:15px;
     
 }
-#blast{
-	bottom:30px;
-	position:absolute;
-	background:url('images/explosion-animated-gif-1.gif');
-	
-	display:none;
-	
+
+#flame {
+    background-size: contain;
+    position: absolute relative  ; 
+    width:600px;
+    height:800px;
+    align-content:center;
+    margin-top: 45px;
+    margin-left: 55px;
+    background: url('images/flame2.jpeg') no-repeat;
+    top: -10px;
+    position:absolute relative; 
+    display:none;
 }
 
