@@ -50,7 +50,7 @@ function loop() {
         if(shipSpeed <=0.0012){
            successful();
             
-            fuel=0;
+           // fuel=0;
         }
         else{
             crashdown();
@@ -58,7 +58,7 @@ function loop() {
     }
         shipSpeed = 0;
         shipPosition = 0;
-       
+       landed=true;
     }
 
     layout();
@@ -69,6 +69,8 @@ function reset() {
     shipSpeed = 0;
     fuel=maxFuel;
     ship.style.background="url('images/ship.png')"
+    document.getElementById("Crashed").innerHTML = "";
+    document.getElementById("Successful").innerHTML = "";
     layout();
 }
 
@@ -94,5 +96,5 @@ function crashdown(){
     document.getElementById("Crashed").innerHTML = "Crashed";
 }
 function successful(){
-    document.getElementById("Successful").innerHTML="Successful";
+    document.getElementById("Successful").innerHTML="Landed Safely";
 }

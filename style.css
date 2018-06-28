@@ -35,19 +35,21 @@ body{
 #Successful{
     
         position: absolute;
-        background: #cfcfcf;
+        background: red;
         top: 20px;
         right: 20px;
+        
         
 }
 #Crashed{
     
     position: absolute;
-    color:red;
+    color:rgb(8, 8, 8);
     top: 20px;
     right: 20px;
-    height: 30px;
-    width: 50px;
+    height:30px;
+    width: 45px;
+    
     
 }
 #fire{
